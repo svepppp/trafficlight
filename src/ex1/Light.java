@@ -1,9 +1,9 @@
 package ex1;
 
 public class Light {
+    private static final int MINUTE = 60000; //  one minute
     private Color color;
     private int time;
-    private static final int MINUTE = 60000; //  one minute
 
     public Light() {
     }
