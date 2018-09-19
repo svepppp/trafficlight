@@ -1,5 +1,5 @@
 package ex1;
 
-public enum Colour {
+public enum Color {
     GREEN, YELLOW, RED
 }

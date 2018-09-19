@@ -1,20 +1,20 @@
 package ex1;
 
 public class Light {
-    private Colour colour;
+    private Color color;
     private int time;
+    private static final int MINUTE = 60000; //  one minute
 
     public Light() {
     }
 
-    public Light(Colour colour, int time) {
-        this.colour = colour;
+    public Light(Color color, int time) {
+        this.color = color;
         this.time = time;
     }
 
-    public void shine() {
-        int MINUTE = 60000;  //  одна минута
-        System.out.println(colour);
+    public void toShine() {
+        System.out.println(color);
         try {
             Thread.sleep(time * MINUTE);
         } catch (InterruptedException e) {

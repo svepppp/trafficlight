@@ -2,35 +2,37 @@ package ex1;
 
 import java.util.Scanner;
 
-import static ex1.Colour.GREEN;
-import static ex1.Colour.RED;
-import static ex1.Colour.YELLOW;
+import static ex1.Color.GREEN;
+import static ex1.Color.RED;
+import static ex1.Color.YELLOW;
 
 public class TrafficLight {
-    private int SIZE = 3; //  размер светофора
-    private Light[] lights = new Light[SIZE];  // лампочка
-    private Colour[] colours = {GREEN, YELLOW, RED};  // цвет
+    private static final int SIZE = 3; //  size of traffic light
+    private Light[] lights = new Light[SIZE];  // light
+    private Color[] colors = {GREEN, YELLOW, RED};  // color
     private Scanner scanner = new Scanner(System.in);
 
     public TrafficLight() {
     }
 
-    public void init() {  //  инициализация
+    // initialization
+    public void init() {
         for (int i = 0; i < SIZE; i++) {
-            System.out.println(colours[i] + ":   укажите длительность в минутах  ");
+            System.out.println(colors[i] + ":   укажите длительность в минутах  ");
             int time = getTime();
-            lights[i] = new Light(colours[i], time);
-
+            lights[i] = new Light(colors[i], time);
         }
     }
 
-    public void shine() {  // включить светофор
+    // turn on the traffic light
+    public void toShine() {
         for (Light light : lights) {
-            light.shine();
+            light.toShine();
         }
     }
 
-    public int getTime() {  // получить длительность  светового сигнала
+    //get the duration of the light signal
+    public int getTime() {
         int time = 0;
         if (scanner.hasNextInt()) {
             time = scanner.nextInt();
